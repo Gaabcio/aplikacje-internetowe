@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+html{
+    position: relative;
+    min-height: 100%;
+}
+
 body {
     font-family: "Poppins", sans-serif;
     font-weight: 300;
@@ -7,26 +12,14 @@ body {
     background-color: gainsboro;
 }
 
-html{
-    position: relative;
-    min-height: 100%;
-}
-
-#container {
+/* Dla wszystkich podstron */
+#container { /* Do podziału strony (banner, */
     display:grid;
     grid-template-rows:auto 1fr auto;
     grid-template-columns:100%;
     min-height:100vh;
 }
 
-header {
-    display: flex;
-    align-items: center; /* Wyśrodkowanie w pionie */
-    justify-content: center; /* Rozstawienie logo i menu */
-    gap: 40px;
-    background-color: ghostwhite;
-    text-align: center;
-}
 
 .socials{
     position: absolute;
@@ -37,6 +30,25 @@ header {
     margin-top: 4px;
 }
 
+#logo{
+    height: 100px;
+}
+
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    background-color: ghostwhite;
+    text-align: center;
+}
+
+header img{
+    height: 100px;
+}
+
+
 nav {
     display: flex;
     gap: 15px; /* Odstęp między przyciskami */
@@ -45,57 +57,41 @@ nav {
 
 @media (max-width: 900px) { /* Dla ekranów o szerokości 600px lub mniejszej */
     nav {
-        flex-direction: column; /* Ustaw układ pionowy */
-        align-items: center; /* Wyśrodkuj przyciski */
+        flex-direction: column;
+        align-items: center;
     }
 
     nav a {
-        width: 30%; /* Przyciski zajmują 80% szerokości ekranu */
+        width: 30%;
     }
 }
 
-#logo{
-    height: 100px;
+section {
+    margin: auto;
+    padding: 10px 30px;
+    text-align: justify;
+    background-color: gainsboro;
 }
+
+section img{
+    width: 50%;
+}
+
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #e8906a;
+    color: white;
+    margin-top: 10px;
+}
+
 
 /* Ukrycie obrazu na starcie */
 .wolne_pojawianie {
     opacity: 0; /* Obraz niewidoczny na początku */
     transform: scale(0.95); /* Lekko zmniejszony */
     animation: fadeIn 2s ease-in-out forwards; /* Animacja */
-}
-
-.obrazek-main{
-    display: flex;
-    position: relative;
-    border-radius: 5px;
-    margin: auto;
-    justify-content: center;
-    align-items: center;
-    background-image: url(images/stejk.jpg);
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
-    height: 75vh;
-}
-
-.tekst-w-obrazku{
-    position: absolute;
-    animation: fadeIn 2s ease-in-out forwards;
-    text-align: center;
-    color: white;
-    padding: 20px;
-    border-radius: 10px;
-    background-color: rgba(0,0,0,.5);
-}
-
-.przycisk-w-obrazku{
-    color: white;
-    background-color: #e8906a;
-}
-
-.przycisk-w-obrazku:hover{
-    color: black;
 }
 
 /* Definicja animacji */
@@ -111,18 +107,33 @@ nav {
 }
 
 
-
-#kontakt{
-    display: flex;
-    justify-content: center;
-    gap: 70px;
-    background-color: lightgray;
-    padding: 15px;
-    border-radius: 15px;
-    border:1px solid gray;
-    flex-wrap: wrap;
-
+.przycisk{
+    background-color: #e8906a;
+    border: 0;
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 15px;
 }
+
+.przycisk:hover{
+    background-color: gray;
+}
+
+
+.pole_tekstowe{
+    width: 70%;
+    height: 35px;
+    text-align: center;
+    margin-bottom: 5px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.pole_tekstowe:hover{
+    border: 2px black solid;
+    border-radius: 3px;
+}
+
 
 h1{
     text-align: center;
@@ -139,16 +150,45 @@ a:hover{
     color: #e8906a;
 }
 
-section {
+
+
+
+/* INDEX.HTML */
+.obrazek-main{
+    display: flex;
+    position: relative;
+    border-radius: 5px;
     margin: auto;
-    padding: 10px 30px;
-    text-align: justify;
-    background-color: gainsboro;
+    justify-content: center;
+    align-items: center;
+    background-image: url(images/stejk.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    height: 75vh;
 }
 
-section img{
-    width: 50%;
+
+.tekst-w-obrazku{
+    position: absolute;
+    animation: fadeIn 2s ease-in-out forwards;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgba(0,0,0,.5);
 }
+
+
+.przycisk-w-obrazku{
+    color: white;
+    background-color: #e8906a;
+}
+
+.przycisk-w-obrazku:hover{
+    color: black;
+}
+
 
 .o_nas{
     display: flex;
@@ -161,6 +201,7 @@ section img{
     justify-content: center;
 }
 
+
 #anka_michal{
     float: right;
     text-align: center;
@@ -170,7 +211,6 @@ section img{
     margin-left: 25px;
     border-radius: 7px;
 }
-
 
 
 .dostawcy{
@@ -197,6 +237,111 @@ section img{
     transition: transform 0.3s ease;
 }
 
+
+
+
+/* MENU.HTML */
+.menu-header{
+    background-image: url(images/stejk.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    height: 200px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+}
+
+
+.dania{
+    display: flex;
+    justify-content: center;
+    gap: 200px;
+    flex-wrap: wrap;
+}
+
+.dania h3{
+    margin-bottom:5px ;
+}
+
+
+.linia{
+    border-color: #e8906a;
+}
+
+
+.cena{
+    float:right;
+    font-weight: 400;
+    font-size: 17px;
+    margin-left: 15px;
+}
+
+
+
+
+/* OPINIE.HTML */
+.opinia-formularz{
+    text-align: center;
+}
+
+.opinia-form{
+    width: 40%;
+    height: 35px;
+    text-align: center;
+    margin-bottom: 5px;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.opinie-gosci{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.opinie-gosci img{
+    width: 50px;
+}
+
+.opinia-goscia{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.opinia-goscia h3{
+    margin:0;
+}
+
+
+
+
+/* KONTAKT.HTML */
+#kontakt{
+    display: flex;
+    justify-content: center;
+    gap: 70px;
+    background-color: lightgray;
+    padding: 15px;
+    border-radius: 15px;
+    border:1px solid gray;
+    flex-wrap: wrap;
+
+}
+
+
+#formularz-danekontaktowe{
+    text-align: center;
+    width: 510px;
+}
+
+#formularz-danekontaktowe a{
+    color: #e8906a;
+}
+
+
 #godziny_otwarcia{
     display: flex;
     width: 510px;
@@ -210,118 +355,7 @@ section img{
     height: 50%;
 }
 
-#formularz-danekontaktowe{
-    text-align: center;
-    width: 510px;
-
-}
-
-#formularz-danekontaktowe a{
-    color: #e8906a;
-}
-
-.pole_tekstowe{
-    width: 70%;
-    height: 35px;
-    text-align: center;
-    margin-bottom: 5px;
-    font-family: 'Poppins', sans-serif;
-}
-
-.pole_tekstowe:hover{
-    border: 2px black solid;
-    border-radius: 3px;
-}
-
-.opinia-formularz{
-    text-align: center;
-}
-
-.opinia-form{
-    width: 40%;
-    height: 35px;
-    text-align: center;
-    margin-bottom: 5px;
-    font-family: 'Poppins', sans-serif;
-}
-
-.opinia-goscia{
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.opinia-goscia h3{
-    margin:0;
-}
-
-.opinie-gosci{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-
-.opinie-gosci img{
-    width: 50px;
-}
-
-.menu-header{
-    background-image: url(images/stejk.jpg);
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
-    height: 200px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    color: white;
-}
-
-.dania{
-    display: flex;
-    justify-content: center;
-    gap: 200px;
-    flex-wrap: wrap;
-}
-
-.dania h3{
-    margin-bottom:5px ;
-}
-
-.cena{
-    float:right;
-    font-weight: 400;
-    font-size: 17px;
-    margin-left: 15px;
-}
-
-.linia{
-    border-color: #e8906a;
-}
-
-footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #e8906a;
-    color: white;
-    margin-top: 10px;
-}
 
 input{
     font-family: "Poppins", sans-serif;
 }
-
-.przycisk{
-    background-color: #e8906a;
-    border: 0;
-    color: white;
-    padding: 10px;
-    font-weight: bold;
-    font-size: 15px;
-}
-
-.przycisk:hover{
-    background-color: gray;
-}
-
-
