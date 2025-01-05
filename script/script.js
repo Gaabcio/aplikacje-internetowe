@@ -20,8 +20,16 @@ document.addEventListener('DOMContentLoaded', function () {
         clearInterval(scrollInterval);
     }
 
+    function resetScrolling() {
+        stopScrolling();
+        scrollAmount = 0;
+        container.scrollLeft = 0;
+        startScrolling();
+    }
+
     container.addEventListener('mouseover', stopScrolling);
     container.addEventListener('mouseout', startScrolling);
+    window.addEventListener('resize', resetScrolling);
 
     startScrolling();
 });
