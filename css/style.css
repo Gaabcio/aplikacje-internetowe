@@ -43,12 +43,12 @@ header {
     top: 0;
     width: 100%;
     z-index: 1000;
-    transition: all 0.3s ease;
+    transition: all 0.5s ease;
 }
 
 header.shrink {
-    padding: 10px 0;
-    height: 60px;
+    /*padding: 10px 0;*/
+    /*height: 30px;*/
 }
 
 header img {
@@ -184,6 +184,7 @@ footer {
 
 h1{
     text-align: center;
+    color: black;
 }
 
 a {
@@ -213,6 +214,7 @@ a:hover{
     background-attachment: fixed;
     background-position: center;
     height: 75vh;
+
 }
 
 
@@ -254,6 +256,15 @@ a:hover{
 #anka_michal{
     float: right;
     text-align: center;
+
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+#anka_michal.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 #anka_michal img{
@@ -381,7 +392,16 @@ a:hover{
     margin:0;
 }
 
+.opinia {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
 
+.opinia.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
 
 
 /* KONTAKT.HTML */
