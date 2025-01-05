@@ -32,7 +32,6 @@ body {
     height: 100px;
 }
 
-
 header {
     display: flex;
     align-items: center;
@@ -40,11 +39,41 @@ header {
     gap: 40px;
     background-color: ghostwhite;
     text-align: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: all 0.3s ease;
 }
 
-header img{
-    height: 100px;
+header.shrink {
+    padding: 10px 0;
+    height: 60px;
 }
+
+header img {
+    height: 100px;
+    transition: height 0.3s ease;
+}
+
+header.shrink img {
+    height: 50px;
+}
+
+
+
+    /*header {*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    justify-content: center;*/
+/*    gap: 40px;*/
+/*    background-color: ghostwhite;*/
+/*    text-align: center;*/
+/*}*/
+
+/*header img{*/
+/*    height: 100px;*/
+/*}*/
 
 
 nav {
@@ -58,10 +87,29 @@ nav {
         flex-direction: column;
         align-items: center;
         margin-right: 30px;
+        gap: 0;
     }
 
     nav a {
         width: 30%;
+    }
+
+    /*zeby shrink nie robil sie ponizej 900px*/
+    header{
+        position: absolute;
+    }
+
+    header.shrink {
+        padding: 0;
+        height: auto;
+    }
+
+    header.shrink img {
+        height: 100px;
+    }
+
+    main {
+        padding-top: 65px; /* Dostosuj w zależności od wysokości nagłówka */
     }
 }
 
@@ -268,6 +316,7 @@ a:hover{
     justify-content: space-around;
     align-items: center;
     color: white;
+    margin-top: 100px;
 }
 
 
